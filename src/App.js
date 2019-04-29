@@ -1,9 +1,38 @@
 import React from 'react';
 import './css/pure.css';
 import './css/side-menu.css';
-// import './App.css';
+import './App.css';
+
+import axios from 'axios';
+
+const URL = 'http://localhost:8080/api';
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      list: []
+    };
+  }
+
+  componentWillMount() {
+    axios.get(URL + '/autores')
+      .then(response => {
+        // handle success
+        this.setState({
+          list: response.data,
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.log(error);
+      })
+      .then(() => {
+        // always executed
+      });
+  }
 
   render() {
     return (
@@ -56,23 +85,33 @@ class App extends React.Component {
                   <button type="submit" className="pure-button pure-button-primary">Gravar</button>
                 </div>
               </form>
-
             </div>
+
             <div>
-              <table className="pure-table">
-                <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th>email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Alberto</td>
-                    <td>alberto.souza@caelum.com.br</td>
-                  </tr>
-                </tbody>
-              </table>
+              {this.state.list.length ? (
+                <table className="pure-table">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      this.state.list.map(author =>
+                        (
+                          <tr>
+                            <td>{author.nome}</td>
+                            <td>{author.email}</td>
+                          </tr>
+                        )
+                      )
+                    }
+                  </tbody>
+                </table>
+              ) : (
+                <p className="error-text">Nenhum registro encontrado.</p>
+              )}
             </div>
           </div>
 
