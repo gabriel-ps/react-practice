@@ -4,9 +4,9 @@ import './css/pure.css';
 import './css/side-menu.css';
 import './App.css';
 
-import HomePage from './pages/HomePage.js';
-import AuthorsPage from './pages/AuthorsPage.js';
-import BooksPage from './pages/BooksPage.js';
+import HomePage from './components/home/HomePage';
+import AuthorsPage from './components/authors/AuthorsPage';
+import BooksPage from './components/books/BooksPage';
 
 class App extends React.Component {
 
