@@ -14,15 +14,15 @@ class AuthorPage extends React.Component {
     this.state = {
       list: []
     };
+
+    this.setAuthorsList = this.setAuthorsList.bind(this);
   }
 
   componentDidMount() {
     axios.get(URL + '/autores')
       .then(response => {
         // handle success
-        this.setState({
-          list: response.data,
-        });
+        this.setAuthorsList(response.data);
       })
       .catch(error => {
         // handle error
@@ -31,6 +31,10 @@ class AuthorPage extends React.Component {
       .then(() => {
         // always executed
       });
+  }
+
+  setAuthorsList(list) {
+    this.setState({list});
   }
 
   render() {
@@ -42,7 +46,7 @@ class AuthorPage extends React.Component {
         </div>
 
         <div className="content" id="content">
-          <AuthorForm />
+          <AuthorForm setAuthorsList={this.setAuthorsList} />
           <AuthorList list={this.state.list} />
         </div>
       </div>
