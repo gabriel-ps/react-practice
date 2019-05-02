@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const URL = 'http://localhost:8080/api';
 
-class AuthorPage extends React.Component {
+class AuthorsPage extends React.Component {
 
   constructor() {
     super();
@@ -34,7 +34,7 @@ class AuthorPage extends React.Component {
     return (
       <div>
         <div className="header">
-          <h1>Cadastro de autor</h1>
+          <h1>Author registration</h1>
           {/* <h2>A subtitle for your page goes here</h2> */}
         </div>
 
@@ -42,20 +42,20 @@ class AuthorPage extends React.Component {
           <div className="pure-form pure-form-aligned">
             <form className="pure-form pure-form-aligned">
               <div className="pure-control-group">
-                <label htmlFor="nome">Nome</label>
-                <input id="nome" type="text" name="nome" />
+                <label htmlFor="name">Name</label>
+                <input id="name" type="text" name="nome" />
               </div>
               <div className="pure-control-group">
                 <label htmlFor="email">Email</label>
                 <input id="email" type="email" name="email" />
               </div>
               <div className="pure-control-group">
-                <label htmlFor="senha">Senha</label>
-                <input id="senha" type="password" name="senha"  />
+                <label htmlFor="password">Password</label>
+                <input id="password" type="password" name="senha"  />
               </div>
               <div className="pure-control-group">
                 <label></label>
-                <button type="submit" className="pure-button pure-button-primary">Gravar</button>
+                <button type="submit" className="pure-button pure-button-primary">Save</button>
               </div>
             </form>
           </div>
@@ -65,7 +65,7 @@ class AuthorPage extends React.Component {
               <table className="pure-table">
                 <thead>
                   <tr>
-                    <th>Nome</th>
+                    <th>name</th>
                     <th>email</th>
                   </tr>
                 </thead>
@@ -83,7 +83,7 @@ class AuthorPage extends React.Component {
                 </tbody>
               </table>
             ) : (
-              <p className="error-text">Nenhum registro encontrado.</p>
+              <p className="error-text">No records found.</p>
             )}
           </div>
         </div>
@@ -92,4 +92,4 @@ class AuthorPage extends React.Component {
   }
 }
 
-export default AuthorPage;
+export default AuthorsPage;
