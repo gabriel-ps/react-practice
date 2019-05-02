@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-const API = 'http://localhost:8080/api';
+import environment from '../../environment';
+
+const API = environment.ApiUrl;
 
 class AuthorForm extends React.Component {
 

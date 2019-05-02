@@ -3,8 +3,9 @@ import axios from 'axios';
 
 import AuthorForm from './AuthorForm';
 import AuthorList from './AuthorList';
+import environment from '../../environment';
 
-const URL = 'http://localhost:8080/api';
+const API = environment.ApiUrl;
 
 class AuthorPage extends React.Component {
 
@@ -19,7 +20,7 @@ class AuthorPage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(URL + '/autores')
+    axios.get(API + '/autores')
       .then(response => {
         // handle success
         this.setAuthorsList(response.data);
