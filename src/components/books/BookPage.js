@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BooksPage extends React.Component {
+class BookPage extends React.Component {
 
   render() {
     return (
@@ -18,4 +18,4 @@ class BooksPage extends React.Component {
   }
 }
 
-export default BooksPage;
+export default BookPage;

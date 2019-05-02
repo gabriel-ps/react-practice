@@ -5,8 +5,8 @@ import './css/side-menu.css';
 import './App.css';
 
 import HomePage from './components/home/HomePage';
-import AuthorsPage from './components/authors/AuthorsPage';
-import BooksPage from './components/books/BooksPage';
+import AuthorPage from './components/authors/AuthorPage';
+import BookPage from './components/books/BookPage';
 
 class App extends React.Component {
 
@@ -20,25 +20,25 @@ class App extends React.Component {
 
           <div id="menu">
             <div className="pure-menu">
-                <a className="pure-menu-heading" href="#">Company</a>
-                <ul className="pure-menu-list">
-                  <li className="pure-menu-item">
-                    <Link to="/" className="pure-menu-link">Home</Link>
-                  </li>
-                  <li className="pure-menu-item">
-                    <Link to="/authors" className="pure-menu-link">Authors</Link>
-                  </li>
-                  <li className="pure-menu-item">
-                      <Link to="/books" className="pure-menu-link">Books</Link>
-                  </li>
-                </ul>
+              <a className="pure-menu-heading" href="#">Company</a>
+              <ul className="pure-menu-list">
+                <li className="pure-menu-item">
+                  <Link to="/" className="pure-menu-link">Home</Link>
+                </li>
+                <li className="pure-menu-item">
+                  <Link to="/authors" className="pure-menu-link">Authors</Link>
+                </li>
+                <li className="pure-menu-item">
+                    <Link to="/books" className="pure-menu-link">Books</Link>
+                </li>
+              </ul>
             </div>
           </div>
 
           <div id="main">
             <Route path="/" exact component={HomePage} />
-            <Route path="/authors" component={AuthorsPage} />
-            <Route path="/books" component={BooksPage} />
+            <Route path="/authors" component={AuthorPage} />
+            <Route path="/books" component={BookPage} />
           </div>
         </Router>
       </div>
